@@ -47,9 +47,13 @@ Scheduling:
  H * * * *
 
 Under Build Plugin:
-         cd ~/PycharmProjects/CurrencyExchange
-        .~/PycharmProjects/CurrencyExchange/venv/bin/activate
-        Python ~/PycharmProjects/CurrencyExchange/src/bin/h_get_currency_xchng.py
+        
+	cd ~/PycharmProjects/CurrencyExchange
+        
+	.~/PycharmProjects/CurrencyExchange/venv/bin/activate
+        
+	Python ~/PycharmProjects/CurrencyExchange/src/bin/h_get_currency_xchng.py
+	
         deactivate
 
 Automated Test cases:
