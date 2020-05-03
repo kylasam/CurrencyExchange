@@ -1,6 +1,6 @@
 Exchange Rate:
-	 Foreign exchange rates from Foreign exchange rates API
-	with currency conversion application that fetches conversion rates for USD in hourly basis.
+	
+	Foreign exchange rates from Foreign exchange rates API with currency conversion application that fetches conversion rates for USD in hourly basis.
 	
 	
 Source Data:
@@ -18,8 +18,8 @@ Dataset Information:
 	==> 	/data/output/USD_exchange_rates.csv [ Target file with data append every 1 Hour with added timestamp column]
 
         The data has following information’s:
-	currency rate values from column range A:AG (CSV file)
-	EDW_PUBLICATION_ID   Extraction timestamp in YYYYMMDDHHMMSS format.               
+	Currency rate values from column range A:AG (CSV file)
+	EDW_PUBLICATION_ID -->  Extraction timestamp in YYYYMMDDHHMMSS format.               
 
 	==>	/data/lookup/currency_country_code_lookup.lkp [ Lookup to get the currency and country names]
 
@@ -29,7 +29,8 @@ Dataset Information:
 	-->	Country_name
 
 Production Deployment:
-			Please perform the below steps in sequence for deployment, Unit testing and production scheduling.
+			
+	Please perform the below steps in sequence for deployment, Unit testing and production scheduling.
 		
 		•	Clone the repo from GitHub into prod server.
 		•	Navigate to the HomePath of the project folder
@@ -43,6 +44,7 @@ Production Deployment:
 		•	Please look for options in makefile.venv for more options.
 	
 Scheduling:
+
 	  Since the requirement is ti run the jobs hourly, please set up the same via Scheduling tools. Shown below is an example of Jenkins set up ( cron or Control-M or Tivoli uses different set up )
 	 H * * * *
 	
@@ -57,7 +59,8 @@ Under Build Plugin:
 	        deactivate
 	
 Automated Test cases:
-	     Type make test to call the unit and Integration tests sequentially.
+
+Type make test to call the unit and Integration tests sequentially.
 	
 	Unit testing       : There were 7 test cases written
 	Integration Testing: There were 8 test cases written
