@@ -1,9 +1,9 @@
-	Exchange Rate:
+Exchange Rate:
 	 Foreign exchange rates from Foreign exchange rates API
 	with currency conversion application that fetches conversion rates for USD in hourly basis.
 	
 	
-	Source Data:
+Source Data:
 	
 	Data is gathered from https://exchangeratesapi.io/. Exchange rates API is a free service for current and historical foreign exchange rates published by the European Central Bank
 	
@@ -28,7 +28,7 @@ Dataset Information:
 	-->	Currency_name     
 	-->	Country_name
 
-		Production Deployment:
+Production Deployment:
 			Please perform the below steps in sequence for deployment, Unit testing and production scheduling.
 		
 		•	Clone the repo from GitHub into prod server.
@@ -42,11 +42,11 @@ Dataset Information:
 		•	Type make clean-venv to clean the venv and its contents
 		•	Please look for options in makefile.venv for more options.
 	
-	Scheduling:
-	                     Since the requirement is ti run the jobs hourly, please set up the same via Scheduling tools. Shown below is an example of Jenkins set up ( cron or Control-M or Tivoli uses different set up )
+Scheduling:
+	  Since the requirement is ti run the jobs hourly, please set up the same via Scheduling tools. Shown below is an example of Jenkins set up ( cron or Control-M or Tivoli uses different set up )
 	 H * * * *
 	
-	Under Build Plugin:
+Under Build Plugin:
 	        
 		cd ~/PycharmProjects/CurrencyExchange
 	        
@@ -56,13 +56,15 @@ Dataset Information:
 		
 	        deactivate
 	
-	Automated Test cases:
+Automated Test cases:
 	     Type make test to call the unit and Integration tests sequentially.
 	
 	Unit testing       : There were 7 test cases written
 	Integration Testing: There were 8 test cases written
 
 
+
+Execution Logs:
 
 	cd ~/PycharmProjects/CurrencyExchange
         
