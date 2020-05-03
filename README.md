@@ -1,66 +1,66 @@
-Exchange Rate:
- Foreign exchange rates from Foreign exchange rates API
-with currency conversion application that fetches conversion rates for USD in hourly basis.
-
-
-Source Data:
-
-Data is gathered from https://exchangeratesapi.io/. Exchange rates API is a free service for current and historical foreign exchange rates published by the European Central Bank
-
-
-In this dataset, granularity is 1 based on the requirement:
-•	Hourly
-
-For each extract, one row gets appended in final target file with added timestamp.
+	Exchange Rate:
+	 Foreign exchange rates from Foreign exchange rates API
+	with currency conversion application that fetches conversion rates for USD in hourly basis.
+	
+	
+	Source Data:
+	
+	Data is gathered from https://exchangeratesapi.io/. Exchange rates API is a free service for current and historical foreign exchange rates published by the European Central Bank
+	
+	
+	In this dataset, granularity is 1 based on the requirement:
+	•	Hourly
+	
+	       For each extract, one row gets appended in final target file with added timestamp.
 
 Dataset Information:
 
-	/data/output/USD_exchange_rates.csv [ Target file with data append every 1 Hour with added timestamp column]
+	==> 	/data/output/USD_exchange_rates.csv [ Target file with data append every 1 Hour with added timestamp column]
 
         The data has following information’s:
-	currency rate values from column range A:AG (CSV file)
-	EDW_PUBLICATION_ID   Extraction timestamp in YYYYMMDDHHMMSS format.               
+	currency rate values from column range A:AG (CSV file)
+	EDW_PUBLICATION_ID   Extraction timestamp in YYYYMMDDHHMMSS format.               
 
-	/data/lookup/currency_country_code_lookup.lkp [ Lookup to get the currency and country names]
+	==>	/data/lookup/currency_country_code_lookup.lkp [ Lookup to get the currency and country names]
 
-The data has following information’s:
-	Currency_ISO_code
-	Currency_name     
-	Country_name
+	The data has following information’s:
+	-->	Currency_ISO_code
+	-->	Currency_name     
+	-->	Country_name
 
-Production Deployment:
-	Please perform the below steps in sequence for deployment, Unit testing and production scheduling.
-
-•	Clone the repo from GitHub into prod server.
-•	Navigate to the HomePath of the project folder
-•	Type make and hit Enter,
-	Internally make file would be called
-	venv set up would be done
-	Installing all requirement would happen
-	Main script would be called from src/bin/location
-•	Type make test to call the unit and Integration tests sequentially.
-•	Type make clean-venv to clean the venv and its contents
-•	Please look for options in makefile.venv for more options.
-
-Scheduling:
-                     Since the requirement is ti run the jobs hourly, please set up the same via Scheduling tools. Shown below is an example of Jenkins set up ( cron or Control-M or Tivoli uses different set up )
- H * * * *
-
-Under Build Plugin:
-        
-	cd ~/PycharmProjects/CurrencyExchange
-        
-	.~/PycharmProjects/CurrencyExchange/venv/bin/activate
-        
-	Python ~/PycharmProjects/CurrencyExchange/src/bin/h_get_currency_xchng.py
+		Production Deployment:
+			Please perform the below steps in sequence for deployment, Unit testing and production scheduling.
+		
+		•	Clone the repo from GitHub into prod server.
+		•	Navigate to the HomePath of the project folder
+		•	Type make and hit Enter,
+		•	Internally make file would be called
+		•	venv set up would be done
+		•	Installing all requirement would happen
+		•	Main script would be called from src/bin/location
+		•	Type make test to call the unit and Integration tests sequentially.
+		•	Type make clean-venv to clean the venv and its contents
+		•	Please look for options in makefile.venv for more options.
 	
-        deactivate
-
-Automated Test cases:
-     Type make test to call the unit and Integration tests sequentially.
-
-Unit testing       : There were 7 test cases written
-Integration Testing: There were 8 test cases written
+	Scheduling:
+	                     Since the requirement is ti run the jobs hourly, please set up the same via Scheduling tools. Shown below is an example of Jenkins set up ( cron or Control-M or Tivoli uses different set up )
+	 H * * * *
+	
+	Under Build Plugin:
+	        
+		cd ~/PycharmProjects/CurrencyExchange
+	        
+		.~/PycharmProjects/CurrencyExchange/venv/bin/activate
+	        
+		Python ~/PycharmProjects/CurrencyExchange/src/bin/h_get_currency_xchng.py
+		
+	        deactivate
+	
+	Automated Test cases:
+	     Type make test to call the unit and Integration tests sequentially.
+	
+	Unit testing       : There were 7 test cases written
+	Integration Testing: There were 8 test cases written
 
 
 
